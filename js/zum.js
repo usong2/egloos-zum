@@ -68,7 +68,7 @@ $(document).ready(function () {
     $(chart + "_table tr:eq(" + trNum + ") td").each(function (i) {
       // 데이터 담기
       Arr.push(
-        $(".posting_chart_table tr:eq(" + trNum + ") td")
+        $(chart + "_table tr:eq(" + trNum + ") td")
           .eq(i)
           .text()
       );
