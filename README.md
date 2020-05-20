@@ -16,4 +16,8 @@
 
 ### 다운로드
 
-[https://github.com/usong2/egloos-zum/usong2/egloos-zum/archive/master.zip](https://github.com/usong2/egloos-zum/usong2/egloos-zum/archive/master.zip)
+```bash
+$ git clone https://github.com/usong2/egloos-zum.git
+```
+
++ 다운로드 링크: [https://github.com/usong2/egloos-zum/archive/master.zip](https://github.com/usong2/egloos-zum/archive/master.zip)
