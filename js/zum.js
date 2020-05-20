@@ -4,6 +4,7 @@ $(document).ready(function () {
   var isVisible1 = false;
   var isVisible2 = false;
   var isVisible3 = false;
+  var isVisible4 = false;
 
   $(window).on("scroll", function () {
     // 글쓰기, 탑 버튼 나타내기
@@ -19,7 +20,7 @@ $(document).ready(function () {
       searchHighData(".posting_chart", 2, "on"); // 차트1: 2017년 포스팅을 가장 많이 한 달 찾기
       isVisible1 = true;
     }
-    if (checkVisible($("#eglooSection h3")) && !isVisible2) {
+    if (checkVisible($("#eglooSection h3.tit1")) && !isVisible2) {
       createGraph(".hot_egloo_table", ".hot_egloo");
       searchHighData(".hot_egloo", 1, "on"); // 차트2: 내 이글루가 가장 핫했던 달 찾기
       isVisible2 = true;
@@ -29,6 +30,22 @@ $(document).ready(function () {
       searchHighData(".tag_valley", 1, "tag"); // 차트3: 태그를 많이 발행한 달 찾기
       searchHighData(".tag_valley", 2, "valley"); // 차트3: 밸리를 많이 발행한 달 찾기
       isVisible3 = true;
+    }
+    if (checkVisible($(".circle_chart")) && !isVisible4) {
+      // 원형 차트 생성
+      $(".percent.mobile").percentageLoader({
+        valElement: Math.round("strong"),
+        strokeWidth: 4,
+        bgColor: "#e8e8e8",
+        ringColor: "#6481ff",
+      });
+      $(".percent.pc").percentageLoader({
+        valElement: Math.round("strong"),
+        strokeWidth: 4,
+        bgColor: "#e8e8e8",
+        ringColor: "#1ad8f5",
+      });
+      isVisible4 = true;
     }
   });
 
@@ -64,20 +81,6 @@ $(document).ready(function () {
       className
     );
   }
-
-  // 원형 차트 생성
-  $(".percent.mobile").percentageLoader({
-    valElement: Math.round("strong"),
-    strokeWidth: 4,
-    bgColor: "#e8e8e8",
-    ringColor: "#6481ff",
-  });
-  $(".percent.pc").percentageLoader({
-    valElement: Math.round("strong"),
-    strokeWidth: 4,
-    bgColor: "#e8e8e8",
-    ringColor: "#1ad8f5",
-  });
 
   // 차트 그리기 라이브러리
   function createGraph(data, container) {
