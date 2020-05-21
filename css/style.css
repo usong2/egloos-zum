@@ -308,6 +308,11 @@ body {
 #container .section#eglooSection h3 {
   background-image: url(../images/icon_section_02.png);
 }
+#container .section#eglooSection h3.tit2 {
+  background: none;
+  padding-top: 0;
+  margin-top: 10px;
+}
 #container .section#tagValleySection h3 {
   padding: 103px 0 0 0;
   background-image: url(../images/icon_section_03.png);
